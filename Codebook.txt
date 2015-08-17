@@ -1,0 +1,273 @@
+Course Project Read Me
+
+Getting and Cleaning Data - Course Project
+
+Code Book
+This code book summarizes the resulting data fields in TidyData.txt.
+
+
+Title		Author			Date		Output
+Codebook	Kumari Kahatuduwa	17/08/2015	TidyData.txt
+
+
+Project Description
+Create a tidy dataset with average measures (mean) for each participant for each activity using the dataset referred to in the Coursera website.
+The dataset contain results of an experiment carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, data was captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+Study design and data processing
+Collection of the raw data
+Data was downloaded from the below link as a zipped file. Then it was unzipped and saved to the working directory of the user.
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+Notes on the original (raw) data
+The data was collected from the accelerometers and gyroscopes from the Samsung Galaxy S smartphones. A full description is available at the site where the data was obtained: 
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+Creating the tidy data file
+Guide to create the tidy data file
+1.	Download the data
+2.	Unzip the data file and save to the working directory
+3.	Read the README text file and features_info text file in the UCI HAR Dataset folder to understand the data
+4.	Inertial Signals folders in test and train sub directories are not used in this exercise 
+5.	Create a R script to clean the data, generate the tidy data and write to a text file
+Cleaning of the data
+The R script does the following steps to clean the data:
+1.	Merges the training and the test sets to create one data set.
+2.	Extracts only the measurements on the mean and standard deviation for each measurement. 
+3.	Uses descriptive activity names to name the activities in the data set
+4.	Appropriately labels the data set with descriptive variable names. 
+5.	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+The Readme document below describes the R script in greater detail
+
+Description of the variables in the tiny_data.txt file
+The Variable names in the TidyData set are descriptive and self-explanatory.  These contain 6 levels of descriptors.
+Time / Frequency
+Body
+Gyroscope / Accelerometer
+Magnitude / Jerk Magnitude /Jerk
+X / Y / Z
+Mean / Standard deviation
+There is no unit of measurement given for the numeric Mean and Standard Deviation variables.
+Identifiers
+•	Participant - The Id of the Participant; there are 30 participants.
+•	Activity - The type of activity performed when the corresponding measurements were taken; there are 6 activities. 
+Measurements
+•	TimeBodyAccelerometer-Mean()-X
+•	TimeBodyAccelerometer-Mean()-Y
+•	TimeBodyAccelerometer-Mean()-Z
+•	TimeGravityAccelerometer-Mean()-X
+•	TimeGravityAccelerometer-Mean()-Y
+•	TimeGravityAccelerometer-Mean()-Z
+•	TimeBodyAccelerometerJerk-Mean()-X
+•	TimeBodyAccelerometerJerk-Mean()-Y
+•	TimeBodyAccelerometerJerk-Mean()-Z
+•	TimeBodyGyroscope-Mean()-X
+•	TimeBodyGyroscope-Mean()-Y
+•	TimeBodyGyroscope-Mean()-Z
+•	TimeBodyGyroscopeJerk-Mean()-X
+•	TimeBodyGyroscopeJerk-Mean()-Y
+•	TimeBodyGyroscopeJerk-Mean()-Z
+•	TimeBodyAccelerometerMagnitude-Mean()
+•	TimeGravityAccelerometerMagnitude-Mean()
+•	TimeBodyAccelerometerJerkMagnitude-Mean()
+•	TimeBodyGyroscopeMagnitude-Mean()
+•	TimeBodyGyroscopeJerkMagnitude-Mean()
+•	FrequencyBodyAccelerometer-Mean()-X
+•	FrequencyBodyAccelerometer-Mean()-Y
+•	FrequencyBodyAccelerometer-Mean()-Z
+•	FrequencyBodyAccelerometerJerk-Mean()-X
+•	FrequencyBodyAccelerometerJerk-Mean()-Y
+•	FrequencyBodyAccelerometerJerk-Mean()-Z
+•	FrequencyBodyGyroscope-Mean()-X
+•	FrequencyBodyGyroscope-Mean()-Y
+•	FrequencyBodyGyroscope-Mean()-Z
+•	FrequencyBodyAccelerometerMagnitude-Mean()
+•	FrequencyBodyAccelerometerJerkMagnitude-Mean()
+•	FrequencyBodyGyroscopeMagnitude-Mean()
+•	FrequencyBodyGyroscopeJerkMagnitude-Mean()
+•	TimeBodyAccelerometer-StdDev()-X
+•	TimeBodyAccelerometer-StdDev()-Y
+•	TimeBodyAccelerometer-StdDev()-Z
+•	TimeGravityAccelerometer-StdDev()-X
+•	TimeGravityAccelerometer-StdDev()-Y
+•	TimeGravityAccelerometer-StdDev()-Z
+•	TimeBodyAccelerometerJerk-StdDev()-X
+•	TimeBodyAccelerometerJerk-StdDev()-Y
+•	TimeBodyAccelerometerJerk-StdDev()-Z
+•	TimeBodyGyroscope-StdDev()-X
+•	TimeBodyGyroscope-StdDev()-Y
+•	TimeBodyGyroscope-StdDev()-Z
+•	TimeBodyGyroscopeJerk-StdDev()-X
+•	TimeBodyGyroscopeJerk-StdDev()-Y
+•	TimeBodyGyroscopeJerk-StdDev()-Z
+•	TimeBodyAccelerometerMagnitude-StdDev()
+•	TimeGravityAccelerometerMagnitude-StdDev()
+•	TimeBodyAccelerometerJerkMagnitude-StdDev()
+•	TimeBodyGyroscopeMagnitude-StdDev()
+•	TimeBodyGyroscopeJerkMagnitude-StdDev()
+•	FrequencyBodyAccelerometer-StdDev()-X
+•	FrequencyBodyAccelerometer-StdDev()-Y
+•	FrequencyBodyAccelerometer-StdDev()-Z
+•	FrequencyBodyAccelerometerJerk-StdDev()-X
+•	FrequencyBodyAccelerometerJerk-StdDev()-Y
+•	FrequencyBodyAccelerometerJerk-StdDev()-Z
+•	FrequencyBodyGyroscope-StdDev()-X
+•	FrequencyBodyGyroscope-StdDev()-Y
+•	FrequencyBodyGyroscope-StdDev()-Z
+•	FrequencyBodyAccelerometerMagnitude-StdDev()
+•	FrequencyBodyAccelerometerJerkMagnitude-StdDev()
+•	FrequencyBodyGyroscopeMagnitude-StdDev()
+•	FrequencyBodyGyroscopeJerkMagnitude-StdDev()
+Activity Labels
+•	WALKING (value 1): Partcipant was walking during the test
+•	WALKING_UPSTAIRS (value 2): Partcipant was walking up a staircase during the test
+•	WALKING_DOWNSTAIRS (value 3): Partcipant was walking down a staircase during the test
+•	SITTING (value 4): Partcipant was sitting during the test
+•	STANDING (value 5): Participant was standing during the test
+•	LAYING (value 6): Partcipant was laying down during the test
+Summary of Variables:
+Variable	Minimum	1st Quartile	Median	Mean	4th Quartile	Maximum
+Participant	1	8	15.5	15.5	23	30
+Activity	Laying : 30           	Sitting: 30	Standing: 30      	Walking: 30     	Walking Downstairs: 30	Walking Upstairs: 30
+TimeBodyAccelerometer.Mean...X	0.2216	0.2712	0.277	0.2743	0.28	0.3015
+TimeBodyAccelerometer.Mean...Y	-0.040514	-0.020022	-0.017262	-0.017876	-0.014936	-0.001308
+TimeBodyAccelerometer.Mean...Z	-0.15251	-0.11207	-0.10819	-0.10916	-0.10443	-0.07538
+TimeGravityAccelerometer.Mean...X	-0.68	0.8376	0.9208	0.6975	0.9425	0.9745
+TimeGravityAccelerometer.Mean...Y	-0.47989	-0.23319	-0.12782	-0.01621	0.08773	0.95659
+TimeGravityAccelerometer.Mean...Z	-0.49509	-0.11726	0.02384	0.07413	0.14946	0.95787
+TimeBodyAccelerometerJerk.Mean...X	0.04269	0.07396	0.0764	0.07947	0.0833	0.13019
+TimeBodyAccelerometerJerk.Mean...Y	-0.0386872	0.0004664	0.0094698	0.0075652	0.0134008	0.0568186
+TimeBodyAccelerometerJerk.Mean...Z	-0.067458	-0.010601	-0.003861	-0.004953	0.001958	0.038053
+TimeBodyGyroscope.Mean...X	-0.20578	-0.04712	-0.02871	-0.03244	-0.01676	0.1927
+TimeBodyGyroscope.Mean...Y	-0.20421	-0.08955	-0.07318	-0.07426	-0.06113	0.02747
+TimeBodyGyroscope.Mean...Z	-0.07245	0.07475	0.08512	0.08744	0.10177	0.1791
+TimeBodyGyroscopeJerk.Mean...X	-0.15721	-0.10322	-0.09868	-0.09606	-0.0911	-0.02209
+TimeBodyGyroscopeJerk.Mean...Y	-0.07681	-0.04552	-0.04112	-0.04269	-0.03842	-0.0132
+TimeBodyGyroscopeJerk.Mean...Z	-0.0925	-0.061725	-0.05343	-0.054802	-0.048985	-0.006941
+TimeBodyAccelerometerMagnitude.Mean..	-0.9865	-0.9573	-0.4829	-0.4973	-0.0919	0.6446
+TimeGravityAccelerometerMagnitude.Mean..	-0.9865	-0.9573	-0.4829	-0.4973	-0.0919	0.6446
+TimeBodyAccelerometerJerkMagnitude.Mean..	-0.9928	-0.9807	-0.8168	-0.6079	-0.2456	0.4345
+TimeBodyGyroscopeMagnitude.Mean..	-0.9807	-0.9461	-0.6551	-0.5652	-0.2159	0.418
+TimeBodyGyroscopeJerkMagnitude.Mean..	-0.99732	-0.98515	-0.86479	-0.73637	-0.51186	0.08758
+FrequencyBodyAccelerometer.Mean...X	-0.9952	-0.9787	-0.7691	-0.5758	-0.2174	0.537
+FrequencyBodyAccelerometer.Mean...Y	-0.98903	-0.95361	-0.59498	-0.48873	-0.06341	0.52419
+FrequencyBodyAccelerometer.Mean...Z	-0.9895	-0.9619	-0.7236	-0.6297	-0.3183	0.2807
+FrequencyBodyAccelerometerJerk.Mean...X	-0.9946	-0.9828	-0.8126	-0.6139	-0.282	0.4743
+FrequencyBodyAccelerometerJerk.Mean...Y	-0.9894	-0.9725	-0.7817	-0.5882	-0.1963	0.2767
+FrequencyBodyAccelerometerJerk.Mean...Z	-0.992	-0.9796	-0.8707	-0.7144	-0.4697	0.1578
+FrequencyBodyGyroscope.Mean...X	-0.9931	-0.9697	-0.73	-0.6367	-0.3387	0.475
+FrequencyBodyGyroscope.Mean...Y	-0.994	-0.97	-0.8141	-0.6767	-0.4458	0.3288
+FrequencyBodyGyroscope.Mean...Z	-0.986	-0.9624	-0.7909	-0.6044	-0.2635	0.4924
+FrequencyBodyAccelerometerMagnitude.Mean..	-0.9868	-0.956	-0.6703	-0.5365	-0.1622	0.5866
+FrequencyBodyAccelerometerJerkMagnitude.Mean..	-0.994	-0.977	-0.794	-0.5756	-0.1872	0.5384
+FrequencyBodyGyroscopeMagnitude.Mean..	-0.9865	-0.9616	-0.7657	-0.6671	-0.4087	0.204
+FrequencyBodyGyroscopeJerkMagnitude.Mean..	-0.9976	-0.9813	-0.8779	-0.7564	-0.5831	0.1466
+TimeBodyAccelerometer.StdDev...X	-0.9961	-0.9799	-0.7526	-0.5577	-0.1984	0.6269
+TimeBodyAccelerometer.StdDev...Y	-0.99024	-0.94205	-0.50897	-0.46046	-0.03077	0.61694
+TimeBodyAccelerometer.StdDev...Z	-0.9877	-0.9498	-0.6518	-0.5756	-0.2306	0.609
+TimeGravityAccelerometer.StdDev...X	-0.9968	-0.9825	-0.9695	-0.9638	-0.9509	-0.8296
+TimeGravityAccelerometer.StdDev...Y	-0.9942	-0.9711	-0.959	-0.9524	-0.937	-0.6436
+TimeGravityAccelerometer.StdDev...Z	-0.991	-0.9605	-0.945	-0.9364	-0.918	-0.6102
+TimeBodyAccelerometerJerk.StdDev...X	-0.9946	-0.9832	-0.8104	-0.5949	-0.2233	0.5443
+TimeBodyAccelerometerJerk.StdDev...Y	-0.9895	-0.9724	-0.7756	-0.5654	-0.1483	0.3553
+TimeBodyAccelerometerJerk.StdDev...Z	-0.99329	-0.98266	-0.88366	-0.73596	-0.51212	0.03102
+TimeBodyGyroscope.StdDev...X	-0.9943	-0.9735	-0.789	-0.6916	-0.4414	0.2677
+TimeBodyGyroscope.StdDev...Y	-0.9942	-0.9629	-0.8017	-0.6533	-0.4196	0.4765
+TimeBodyGyroscope.StdDev...Z	-0.9855	-0.9609	-0.801	-0.6164	-0.3106	0.5649
+TimeBodyGyroscopeJerk.StdDev...X	-0.9965	-0.98	-0.8396	-0.7036	-0.4629	0.1791
+TimeBodyGyroscopeJerk.StdDev...Y	-0.9971	-0.9832	-0.8942	-0.7636	-0.5861	0.2959
+TimeBodyGyroscopeJerk.StdDev...Z	-0.9954	-0.9848	-0.861	-0.7096	-0.4741	0.1932
+TimeBodyAccelerometerMagnitude.StdDev..	-0.9865	-0.943	-0.6074	-0.5439	-0.209	0.4284
+TimeGravityAccelerometerMagnitude.StdDev..	-0.9865	-0.943	-0.6074	-0.5439	-0.209	0.4284
+TimeBodyAccelerometerJerkMagnitude.StdDev..	-0.9946	-0.9765	-0.8014	-0.5842	-0.2173	0.4506
+TimeBodyGyroscopeMagnitude.StdDev..	-0.9814	-0.9476	-0.742	-0.6304	-0.3602	0.3
+TimeBodyGyroscopeJerkMagnitude.StdDev..	-0.9977	-0.9805	-0.8809	-0.755	-0.5767	0.2502
+FrequencyBodyAccelerometer.StdDev...X	-0.9966	-0.982	-0.747	-0.5522	-0.1966	0.6585
+FrequencyBodyAccelerometer.StdDev...Y	-0.99068	-0.94042	-0.51338	-0.48148	-0.07913	0.56019
+FrequencyBodyAccelerometer.StdDev...Z	-0.9872	-0.9459	-0.6441	-0.5824	-0.2655	0.6871
+FrequencyBodyAccelerometerJerk.StdDev...X	-0.9951	-0.9847	-0.8254	-0.6121	-0.2475	0.4768
+FrequencyBodyAccelerometerJerk.StdDev...Y	-0.9905	-0.9737	-0.7852	-0.5707	-0.1685	0.3498
+FrequencyBodyAccelerometerJerk.StdDev...Z	-0.993108	-0.983747	-0.895121	-0.756489	-0.543787	-0.006236
+FrequencyBodyGyroscope.StdDev...X	-0.9947	-0.975	-0.8086	-0.711	-0.4813	0.1966
+FrequencyBodyGyroscope.StdDev...Y	-0.9944	-0.9602	-0.7964	-0.6454	-0.4154	0.6462
+FrequencyBodyGyroscope.StdDev...Z	-0.9867	-0.9643	-0.8224	-0.6577	-0.3916	0.5225
+FrequencyBodyAccelerometerMagnitude.StdDev..	-0.9876	-0.9452	-0.6513	-0.621	-0.3654	0.1787
+FrequencyBodyAccelerometerJerkMagnitude.StdDev..	-0.9944	-0.9752	-0.8126	-0.5992	-0.2668	0.3163
+FrequencyBodyGyroscopeMagnitude.StdDev..	-0.9815	-0.9488	-0.7727	-0.6723	-0.4277	0.2367
+FrequencyBodyGyroscopeJerkMagnitude.StdDev..	-0.9976	-0.9802	-0.8941	-0.7715	-0.6081	0.2878
+Classes of variables:
+TidyData.txt 
+Class: data.frame
+180 observations and 68 variables
+variable	class	Unique values / levels
+ $ Participant                                     	int	1 1 1 1 1 1 2 2 2 2 ...
+ $ Activity                                        	chr	w/ 6 levels "Laying","Sitting",..
+ $ TimeBodyAccelerometer.Mean...X                  	num	0.222 0.261 0.279 0.277 0.289 … 1 2 3 4 5 6 1 2 3 4 …
+ $ TimeBodyAccelerometer.Mean...Y                  	num	-0.04051 -0.00131 -0.01614 -0.01738 -0.00992 ...
+ $ TimeBodyAccelerometer.Mean...Z                  	num	-0.113 -0.105 -0.111 -0.111 -0.108 ...
+ $ TimeGravityAccelerometer.Mean...X               	num	-0.249 0.832 0.943 0.935 0.932 ...
+ $ TimeGravityAccelerometer.Mean...Y               	num	0.706 0.204 -0.273 -0.282 -0.267 ...
+ $ TimeGravityAccelerometer.Mean...Z               	num	0.4458 0.332 0.0135 -0.0681 -0.0621 ...
+ $ TimeBodyAccelerometerJerk.Mean...X              	num	0.0811 0.0775 0.0754 0.074 0.0542 ...
+ $ TimeBodyAccelerometerJerk.Mean...Y              	num	0.003838 -0.000619 0.007976 0.028272 0.02965 ...
+ $ TimeBodyAccelerometerJerk.Mean...Z              	num	0.01083 -0.00337 -0.00369 -0.00417 -0.01097 ...
+ $ TimeBodyGyroscope.Mean...X                      	num	-0.0166 -0.0454 -0.024 -0.0418 -0.0351 ...
+ $ TimeBodyGyroscope.Mean...Y                      	num	-0.0645 -0.0919 -0.0594 -0.0695 -0.0909 ...
+ $ TimeBodyGyroscope.Mean...Z                      	num	0.1487 0.0629 0.0748 0.0849 0.0901 ...
+ $ TimeBodyGyroscopeJerk.Mean...X                  	num	-0.1073 -0.0937 -0.0996 -0.09 -0.074 ...
+ $ TimeBodyGyroscopeJerk.Mean...Y                  	num	-0.0415 -0.0402 -0.0441 -0.0398 -0.044 ...
+ $ TimeBodyGyroscopeJerk.Mean...Z                  	num	-0.0741 -0.0467 -0.049 -0.0461 -0.027 ...
+ $ TimeBodyAccelerometerMagnitude.Mean..           	num	-0.8419 -0.9485 -0.9843 -0.137 0.0272 ...
+ $ TimeGravityAccelerometerMagnitude.Mean..        	num	-0.8419 -0.9485 -0.9843 -0.137 0.0272 ...
+ $ TimeBodyAccelerometerJerkMagnitude.Mean..       	num	-0.9544 -0.9874 -0.9924 -0.1414 -0.0894 ...
+ $ TimeBodyGyroscopeMagnitude.Mean..               	num	-0.8748 -0.9309 -0.9765 -0.161 -0.0757 ...
+ $ TimeBodyGyroscopeJerkMagnitude.Mean..           	num	-0.963 -0.992 -0.995 -0.299 -0.295 ...
+ $ FrequencyBodyAccelerometer.Mean...X             	num	-0.9391 -0.9796 -0.9952 -0.2028 0.0382 ...
+ $ FrequencyBodyAccelerometer.Mean...Y             	num	-0.86707 -0.94408 -0.97707 0.08971 0.00155 ...
+ $ FrequencyBodyAccelerometer.Mean...Z             	num	-0.883 -0.959 -0.985 -0.332 -0.226 ...
+ $ FrequencyBodyAccelerometerJerk.Mean...X         	num	-0.9571 -0.9866 -0.9946 -0.1705 -0.0277 ...
+ $ FrequencyBodyAccelerometerJerk.Mean...Y         	num	-0.9225 -0.9816 -0.9854 -0.0352 -0.1287 ...
+ $ FrequencyBodyAccelerometerJerk.Mean...Z         	num	-0.948 -0.986 -0.991 -0.469 -0.288 ...
+ $ FrequencyBodyGyroscope.Mean...X                 	num	-0.85 -0.976 -0.986 -0.339 -0.352 ...
+ $ FrequencyBodyGyroscope.Mean...Y                 	num	-0.9522 -0.9758 -0.989 -0.1031 -0.0557 ...
+ $ FrequencyBodyGyroscope.Mean...Z                 	num	-0.9093 -0.9513 -0.9808 -0.2559 -0.0319 ...
+ $ FrequencyBodyAccelerometerMagnitude.Mean..      	num	-0.8618 -0.9478 -0.9854 -0.1286 0.0966 ...
+ $ FrequencyBodyAccelerometerJerkMagnitude.Mean..  	num	-0.9333 -0.9853 -0.9925 -0.0571 0.0262 ...
+ $ FrequencyBodyGyroscopeMagnitude.Mean..          	num	-0.862 -0.958 -0.985 -0.199 -0.186 ...
+ $ FrequencyBodyGyroscopeJerkMagnitude.Mean..      	num	-0.942 -0.99 -0.995 -0.319 -0.282 ...
+ $ TimeBodyAccelerometer.StdDev...X                	num	-0.928 -0.977 -0.996 -0.284 0.03 ...
+ $ TimeBodyAccelerometer.StdDev...Y                	num	-0.8368 -0.9226 -0.9732 0.1145 -0.0319 ...
+ $ TimeBodyAccelerometer.StdDev...Z                	num	-0.826 -0.94 -0.98 -0.26 -0.23 ...
+ $ TimeGravityAccelerometer.StdDev...X             	num	-0.897 -0.968 -0.994 -0.977 -0.951 ...
+ $ TimeGravityAccelerometer.StdDev...Y             	num	-0.908 -0.936 -0.981 -0.971 -0.937 ...
+ $ TimeGravityAccelerometer.StdDev...Z             	num	-0.852 -0.949 -0.976 -0.948 -0.896 ...
+ $ TimeBodyAccelerometerJerk.StdDev...X            	num	-0.9585 -0.9864 -0.9946 -0.1136 -0.0123 ...
+ $ TimeBodyAccelerometerJerk.StdDev...Y            	num	-0.924 -0.981 -0.986 0.067 -0.102 ...
+ $ TimeBodyAccelerometerJerk.StdDev...Z            	num	-0.955 -0.988 -0.992 -0.503 -0.346 ...
+ $ TimeBodyGyroscope.StdDev...X                    	num	-0.874 -0.977 -0.987 -0.474 -0.458 ...
+ $ TimeBodyGyroscope.StdDev...Y                    	num	-0.9511 -0.9665 -0.9877 -0.0546 -0.1263 ...
+ $ TimeBodyGyroscope.StdDev...Z                    	num	-0.908 -0.941 -0.981 -0.344 -0.125 ...
+ $ TimeBodyGyroscopeJerk.StdDev...X                	num	-0.919 -0.992 -0.993 -0.207 -0.487 ...
+ $ TimeBodyGyroscopeJerk.StdDev...Y                	num	-0.968 -0.99 -0.995 -0.304 -0.239 ...
+ $ TimeBodyGyroscopeJerk.StdDev...Z                	num	-0.958 -0.988 -0.992 -0.404 -0.269 ...
+ $ TimeBodyAccelerometerMagnitude.StdDev..         	num	-0.7951 -0.9271 -0.9819 -0.2197 0.0199 ...
+ $ TimeGravityAccelerometerMagnitude.StdDev..      	num	-0.7951 -0.9271 -0.9819 -0.2197 0.0199 ...
+ $ TimeBodyAccelerometerJerkMagnitude.StdDev..     	num	-0.9282 -0.9841 -0.9931 -0.0745 -0.0258 ...
+ $ TimeBodyGyroscopeMagnitude.StdDev..             	num	-0.819 -0.935 -0.979 -0.187 -0.226 ...
+ $ TimeBodyGyroscopeJerkMagnitude.StdDev..         	num	-0.936 -0.988 -0.995 -0.325 -0.307 ...
+ $ FrequencyBodyAccelerometer.StdDev...X           	num	-0.9244 -0.9764 -0.996 -0.3191 0.0243 ...
+ $ FrequencyBodyAccelerometer.StdDev...Y           	num	-0.834 -0.917 -0.972 0.056 -0.113 ...
+ $ FrequencyBodyAccelerometer.StdDev...Z           	num	-0.813 -0.934 -0.978 -0.28 -0.298 ...
+ $ FrequencyBodyAccelerometerJerk.StdDev...X       	num	-0.9642 -0.9875 -0.9951 -0.1336 -0.0863 ...
+ $ FrequencyBodyAccelerometerJerk.StdDev...Y       	num	-0.932 -0.983 -0.987 0.107 -0.135 ...
+ $ FrequencyBodyAccelerometerJerk.StdDev...Z       	num	-0.961 -0.988 -0.992 -0.535 -0.402 ...
+ $ FrequencyBodyGyroscope.StdDev...X               	num	-0.882 -0.978 -0.987 -0.517 -0.495 ...
+ $ FrequencyBodyGyroscope.StdDev...Y               	num	-0.9512 -0.9623 -0.9871 -0.0335 -0.1814 ...
+ $ FrequencyBodyGyroscope.StdDev...Z               	num	-0.917 -0.944 -0.982 -0.437 -0.238 ...
+ $ FrequencyBodyAccelerometerMagnitude.StdDev..    	num	-0.798 -0.928 -0.982 -0.398 -0.187 ...
+ $ FrequencyBodyAccelerometerJerkMagnitude.StdDev..	num	-0.922 -0.982 -0.993 -0.103 -0.104 ...
+ $ FrequencyBodyGyroscopeMagnitude.StdDev..        	num	-0.824 -0.932 -0.978 -0.321 -0.398 ...
+ $ FrequencyBodyGyroscopeJerkMagnitude.StdDev..    	num	-0.933 -0.987 -0.995 -0.382 -0.392 ...
+
+
